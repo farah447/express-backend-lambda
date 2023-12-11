@@ -11,7 +11,7 @@ const app = express();
 connectDB();
 
 app.get('/', (req, res) => {
-    res.send("Welcome");
+    res.send("Welcome to serverless");
 });
 
 app.use(cors());
