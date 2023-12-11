@@ -6,7 +6,6 @@ provider:
   runtime: nodejs18.x
   stage: dev
   timeout: 15
-  region: us-east-1
   memorySize: 2048
 
 functions:
@@ -16,4 +15,4 @@ functions:
       - http: ANY /{proxy+}
       - http: ANY /
     environment:
-      MONGODB_URL: mongodb+srv://ffarraahh14499:Fa123456@cluster0.dw8vbja.mongodb.net/awsDB?retryWrites=true&w=majority
+      MONGODB_URL: mongodb+srv://ffarraahh14499:Fa123456@cluster0.dw8vbja.mongodb.net/awsDB

@@ -14,6 +14,11 @@ app.get('/', (req, res) => {
     res.send("Welcome");
 });
 
+app.use(cors());
+app.use('/products', productRouter);
+
+module.exports = app;
+
 /*app.get('/users', (req, res) => {
     res.send({
         users: [
@@ -25,10 +30,6 @@ app.get('/', (req, res) => {
 
 //app.use(express.json());
 //app.use(express.urlencoded({ extended: true }));
-app.use(cors());
-app.use('/products', productRouter);
-
-module.exports = app;
 
 
 
