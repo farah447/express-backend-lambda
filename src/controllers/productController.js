@@ -2,17 +2,21 @@ const Product = require('../models/productModel')
 
 const getAllProducts = async (req, res, next) => {
     try {
-        const products = await Product.find();
+        //const products = await Product.find();
         res.status(200).json({
             message: 'all the products are returned',
-            payload: products,
+            products: [
+                { id: 1, title: "apple1", price: 320 },
+                { id: 2, title: "apple2", price: 420 },
+                { id: 3, title: "apple3", price: 520 },
+            ]
         });
     } catch (error) {
         return res.status(500).send('error occurred');
     };
 };
 
-const getProduct = async (req, res, next) => {
+/*const getProduct = async (req, res, next) => {
     try {
         const id = req.params.id;
         const product = await Product.findById(id);
@@ -40,10 +44,10 @@ const createProduct = async (req, res, next) => {
     } catch (error) {
         return res.status(500).send('error occurred');
     }
-};
+};*/
 
 module.exports = {
     getAllProducts,
-    getProduct,
-    createProduct,
+    //getProduct,
+    //createProduct,
 };
